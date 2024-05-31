@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM mcr.microsoft.com/devcontainers/universal:linux
 
 # install prerequisites
 RUN apt-get update
