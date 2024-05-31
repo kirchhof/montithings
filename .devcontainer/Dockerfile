@@ -13,7 +13,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 # install montithings
-RUN git clone https://github.com/MontiCore/montithings.git
+RUN git clone https://github.com/kirchhof/montithings.git
 WORKDIR "/montithings"
 RUN SKIPDOCKER=1 SKIP_MVN=1 ./installLinux.sh
 RUN mvn clean install -Dexec.skip -Dmaven.test.skip=true
