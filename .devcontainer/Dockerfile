@@ -13,6 +13,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 # install montithings
+RUN export GIT_CLONE_PROTECTION_ACTIVE=false
 RUN git clone https://github.com/MontiCore/montithings.git
 WORKDIR "/montithings"
 RUN SKIPDOCKER=1 SKIP_MVN=1 ./installLinux.sh
