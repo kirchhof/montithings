@@ -34,6 +34,9 @@ sudo apt-get install -y g++ git make cmake ninja-build mosquitto-dev libmosquitt
 
 sudo apt-get install -y python3-paho-mqtt || pip3 install paho-mqtt
 
+# Make sure to use Java 11
+update-java-alternatives -s $(update-java-alternatives -l | grep java-1.11.0-openjdk | awk 'NR == 1 {print $3}')
+
 # Install Docker
 if ! command_exists docker && ! [ "$SKIPDOCKER" ]
 then
