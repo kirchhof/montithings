@@ -29,7 +29,7 @@ sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y ppa:openjdk-r/ppa
 sudo apt-get install -y g++ git make cmake ninja-build mosquitto-dev libmosquitto-dev curl maven \
   python3 python3-pip mosquitto-clients libssl-dev libpq-dev \
-  protobuf-compiler libprotobuf-dev python3-protobuf
+  protobuf-compiler libprotobuf-dev python3-protobuf zip unzip
 
 sudo apt-get install -y python3-paho-mqtt || pip3 install paho-mqtt
 
