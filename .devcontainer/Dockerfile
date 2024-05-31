@@ -27,6 +27,6 @@ RUN sudo apt-get install -y mosquitto-clients
 RUN sudo apt-get install -y libssl-dev libpq-dev
 RUN sudo apt-get install -y protobuf-compiler libprotobuf-dev 
 RUN sudo apt-get install -y python3-protobuf
-RUN pip3 install paho-mqtt
+RUN sudo apt-get install -y python3-paho-mqtt || pip3 install paho-mqtt
 
 RUN mvn clean install -Dexec.skip -Dmaven.test.skip=true
