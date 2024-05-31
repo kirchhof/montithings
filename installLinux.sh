@@ -31,7 +31,7 @@ sudo apt-get install -y g++ git make cmake ninja-build mosquitto-dev libmosquitt
   python3 python3-pip mosquitto-clients libssl-dev libpq-dev \
   protobuf-compiler libprotobuf-dev python3-protobuf
 
-sudo apt-get install -y python3-paho-mqtt || pip3 install paho-mqtt
+sudo apt-get install -y python3-paho-mqtt || pip3 install --break-system-packages paho-mqtt
 
 if command_exists sdk 
 then
