@@ -33,13 +33,14 @@ sudo apt-get install -y g++ git make cmake ninja-build mosquitto-dev libmosquitt
 
 sudo apt-get install -y python3-paho-mqtt || pip3 install paho-mqtt
 
-if command_exists sdk 
+if ! command_exists sdk 
 then
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+fi
+
 # Install OpenJDK 11 from Microsoft and set it as default (by replying yes)
 yes | sdk install java 11.0.23-ms
-else
-sudo apt-get install -y openjdk-11-jdk
-fi
 
 # Install Docker
 if ! command_exists docker && ! [ "$SKIPDOCKER" ]
