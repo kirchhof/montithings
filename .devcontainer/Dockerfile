@@ -16,5 +16,17 @@ ENV LC_ALL en_US.UTF-8
 # install montithings
 RUN git clone https://github.com/MontiCore/montithings.git
 WORKDIR "/montithings"
-RUN SKIPDOCKER=1 SKIP_MVN=1 ./installLinux.sh
+RUN sudo apt-get update
+RUN sudo apt-get install -y software-properties-common
+RUN sudo add-apt-repository -y ppa:openjdk-r/ppa
+RUN sudo apt-get install -y g++ git make cmake ninja-build mosquitto-dev libmosquitto-dev curl maven \
+  openjdk-11-jdk 
+RUN sudo apt-get install -y python3 
+RUN sudo apt-get install -y python3-pip 
+RUN sudo apt-get install -y mosquitto-clients 
+RUN sudo apt-get install -y libssl-dev libpq-dev
+RUN sudo apt-get install -y protobuf-compiler libprotobuf-dev 
+RUN sudo apt-get install -y python3-protobuf
+RUN pip3 install paho-mqtt
+
 RUN mvn clean install -Dexec.skip -Dmaven.test.skip=true
