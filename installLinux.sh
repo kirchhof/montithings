@@ -28,10 +28,18 @@ sudo apt-get update
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y ppa:openjdk-r/ppa
 sudo apt-get install -y g++ git make cmake ninja-build mosquitto-dev libmosquitto-dev curl maven \
-  openjdk-11-jdk python3 python3-pip mosquitto-clients libssl-dev libpq-dev \
+  python3 python3-pip mosquitto-clients libssl-dev libpq-dev \
   protobuf-compiler libprotobuf-dev python3-protobuf
 
-pip3 install paho-mqtt
+sudo apt-get install -y python3-paho-mqtt || pip3 install paho-mqtt
+
+if command_exists sdk 
+then
+# Install OpenJDK 11 from Microsoft and set it as default (by replying yes)
+yes | sdk install java 11.0.23-ms
+else
+sudo apt-get install -y openjdk-11-jdk
+fi
 
 # Install Docker
 if ! command_exists docker && ! [ "$SKIPDOCKER" ]
