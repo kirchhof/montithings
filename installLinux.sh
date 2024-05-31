@@ -27,7 +27,7 @@ cd dependencies
 sudo apt-get update
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y ppa:openjdk-r/ppa
-sudo apt-get install -y g++ git make cmake ninja-build mosquitto-dev libmosquitto-dev curl maven \
+sudo apt-get install -y openjdk-11-jdk g++ git make cmake ninja-build mosquitto-dev libmosquitto-dev curl maven \
   python3 python3-pip mosquitto-clients libssl-dev libpq-dev \
   protobuf-compiler libprotobuf-dev python3-protobuf zip unzip
 
