@@ -16,5 +16,4 @@ ENV LC_ALL en_US.UTF-8
 RUN git clone https://github.com/kirchhof/montithings.git
 WORKDIR "/montithings"
 RUN SKIPDOCKER=1 SKIP_MVN=1 ./installLinux.sh
-RUN export JAVA_HOME=$(sdk home java 11.0.23-ms)
-RUN mvn clean install -Dexec.skip -Dmaven.test.skip=true
+RUN export JAVA_HOME=$(sdk home java 11.0.23-ms) && mvn clean install -Dexec.skip -Dmaven.test.skip=true
