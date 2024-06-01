@@ -1,5 +1,6 @@
 {
 	"name": "MontiThings GitHub Codespace",
 	"image": "kirchhof/codespace",
-	"workspaceFolder": "/montithings"
+	"workspaceFolder": "/montithings",
+	"postStartCommand": "cat docs/ascii-banner.txt"
 }
