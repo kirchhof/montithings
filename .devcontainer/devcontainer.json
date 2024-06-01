@@ -1,5 +1,5 @@
 {
 	"name": "MontiThings GitHub Codespace",
-	"image": "montithings.azurecr.io/codespace",
+	"image": "kirchhof/codespace",
 	"workspaceFolder": "/montithings"
 }
